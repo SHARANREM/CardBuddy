@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CardBuddy</title>
+    <link rel="shortcut icon" href="Assets/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="navigations">
+        <nav>
+            <div class="logo">
+                <h1>CardBuddy</h1>
+                <img src="Assets/img/logo.png" alt="CardBuddy" title="CardBuddy">
+            </div>
+            <ul id="menuList">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#wwd">What We Do?</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li style="padding: 15px 20px; background-color: purple; color: white;border-radius: 5px;"><a
+                        href="Components/login-page/login.html">Login</a></li>
+            </ul>
+            <div class="menu-icon">
+                <img src="Assets/icons/menu.png" alt="Menu" title="Open Menu" onclick="toggleMenu()">
+            </div>
+        </nav>
+    </div>
+    <div class="hero-section" id="home">
+        <div class="contents">
+            <div class="team-details">
+                <h1>Revolution Of Earth</h1>
+                <h2><a href="#">Know About Us</a></h2>
+            </div>
+            <div class="hero-content">
+                <h1>
+                    CardBuddy AI Flashcard Assistant
+                </h1>
+                <p>CardBuddy: An AI-powered flashcard assistant that automates learning, offers personalized revision,
+                    Pomodoro integration, and organized study management.</p>
+            </div>
+        </div>
+    </div>
+    <div class="about-us" id="wwd">
+        <h1>What We Do?</h1>
+        <p>CardBuddy: An AI-powered flashcard assistant that automates Q&A creation, offers personalized revision,
+            Pomodoro integration, and organized study management.</p>
+    </div>
+    <div class="what-we-do" id="features">
+        <h1>Our Features</h1>
+        <div class="grid-wwd">
+            <div class="item">
+                <div class="left">
+                    <img src="/Assets/img/img1.png" alt="Image">
+                </div>
+                <div class="right">
+                    <h1>AI - Powered Flashcards:</h1>
+                    <p>Automatically generate questions from a given title</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="left">
+                    <img src="/Assets/img/img2.png" alt="Image">
+                </div>
+                <div class="right">
+                    <h1>Interactive Revision:</h1>
+                    <p>Timed quizzes with real-time feedback and performance tracking</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="left">
+                    <img src="/Assets/img/img3.png" alt="Image">
+                </div>
+                <div class="right">
+                    <h1>Pomodoro Technique:</h1>
+                    <p>Boost productivity through focused study intervals.</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="left">
+                    <img src="/Assets/img/img4.png" alt="Image">
+                </div>
+                <div class="right">
+                    <h1>Learn List:</h1>
+                    <p>Keep track of learning goals and tasks for better organization.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contact-box" id="contact">
+        <h1>Contact Us</h1>
+        <div class="sl">
+            <div class="left">
+                <h2>Fill out this Form</h2>
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Your Name">
+
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Your Email">
+
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" placeholder="Your Subject">
+
+            </div>
+            <div class="right">
+                <label for="message">Message</label>
+                <textarea id="message" placeholder="Your Message"></textarea>
+            </div>
+        </div>
+        <button id="sendMailButton" onclick="sendMail()">Send Message</button>
+    </div>
+    <div class="team-detail" id="about">
+        <div class="left"><img src="/Assets/img/profile.jpg" alt=""></div>
+        <div class="right">
+            <h1>B. K. Ragesh</h1>
+            <h3>Department of MCA(Master of Computer Applications)</h3>
+            <p>          Hi, I’m Ragesh, the creator of an AI-oriented flashcard project designed to enhance learning.
+                Unlike platforms that auto-generate cards, my idea guides students to create their own, fostering better
+                understanding and retention. With features like a Pomodoro timer and customizable learning lists, this
+                tool makes studying interactive, productive, and deeply engaging.</p>
+        </div>
+    </div>
+
+    <div class="copy">
+        <h5>&copy;2025 All rights Reserved</h5>
+        <h5>Designed & Developed by B. K. Rajesh (ISM)</h5>
+    </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "Jgo5Cppzm09XjJgS7",
+            });
+        })();
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>

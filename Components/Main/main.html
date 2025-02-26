@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+    <link rel="shortcut icon" href="/Assets/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+    <button id="signoutbtn">Logout</button>
+    <h1 id="msg"></h1>
+    <div class="features">
+        <div class="pomodoro-timer">
+            <img src="/Assets/icons/pomodoro.png" alt="Pomodoro">
+                <a href="../others/pomodoro/index.html">Pomodoro</a>
+        </div>
+        <div class="task-manager">
+            <img src="/Assets/icons/taskmanager.png" alt="Task Manager">
+            <a href="../others/taskmanager.html">Task Manager</a>
+        </div>
+        <div class="pomodoro-timer">
+            <img src="/Assets/img/logo.png" alt="Create a card">
+            <a href="../others/pomodoro.html">Create a Card</a>
+    </div>
+    <div class="task-manager">
+        <img src="/Assets/icons/testing.png" alt="Test">
+        <a href="../others/taskmanager.html">Take a test</a>
+    </div>
+    </div>
+    <script>
+        let userCreds = JSON.parse(sessionStorage.getItem("user-creds"));
+        let userInfo = JSON.parse(sessionStorage.getItem("user-insfo"))
+
+        let msgHead = document.getElementById('msg');
+        let SignoutBtn = document.getElementById('signoutbtn');
+
+        let Signout = () => {
+            sessionStorage.removeItem("user-creds");
+            sessionStorage.removeItem("user-insfo");
+            window.location.href = "/index.html";
+        }
+
+        let checkedCred = () => {
+            if (!sessionStorage.getItem("user-creds")) {
+                window.location.href = "/index.html";
+            }
+            else {
+                msgHead.innerText = `HI :  ${userInfo.Username.toUpperCase()}`;
+            }
+        }
+
+        window.addEventListener('load', checkedCred);
+        SignoutBtn.addEventListener('click', Signout);
+
+    </script>
+</body>
+
+</html>

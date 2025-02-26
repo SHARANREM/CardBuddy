@@ -1,0 +1,23 @@
+@import "resets";
+@import "nav";
+@import "hero-sec";
+@import "about-us";
+@import "Ourfeatures";
+@import "mainPage";
+body{
+    background: linear-gradient(to right,#9365FF,#F650FF);
+    background-repeat: repeat;
+    background-size: contain;
+    width: 100%;
+    overflow-x: hidden;
+    min-height: 100vh;
+    &::-webkit-scrollbar{
+        width: 0px;
+    }
+    &::-webkit-scrollbar-track{
+        background-color: #F650FF;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: #9365FF;
+    }
+}

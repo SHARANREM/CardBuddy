@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+//Colors
+$colors : (
+    'whites':rgb(255, 255, 255),
+    'blacks':rgb(25, 25, 25),
+    'main':#f0b52c,
+    'main2':#511cff,
+);
+$font1:"Pacifico", serif;
+$font2:"Poppins", serif;
+@function col($color){
+    @return map-get($map: $colors, $key:$color );
+}
+@mixin res($one){
+    @media all and (max-width:$one){
+        @content;
+    }
+}
+@mixin topfont($size:1rem,$weight:400){
+    font-family: $font1;
+    font-size: $size;
+    font-weight: $weight;
+    color: col(text);
+}
+@mixin font($size:1rem,$weight:400){
+    font-family: $font2;
+    font-size: $size;
+    font-weight: $weight;
+    color: col(text);
+}

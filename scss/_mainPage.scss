@@ -1,0 +1,52 @@
+body{
+    text-align: center;
+    @include font();
+    color: white;
+    button{
+        margin-top: 10px;
+        background-color: white;
+        color: black;
+        cursor: pointer;
+        font-weight: 600;
+        padding: 10px 30px;
+        border: none;
+        border-radius: 10px;
+        transition: .2s ease;
+        &:hover{
+            color: white;
+            background-color: crimson;
+        }
+    }
+}
+.features{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    height: 80vh;
+    gap: 10px;
+    padding: 10px;
+    div{
+        background-color: rgb(233, 233, 233);
+        border-radius: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        a{
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            font-size: 30px;
+        }
+    }
+    @include res(650px){
+        div{
+            flex-direction: column;
+        }
+    }
+    @include res(650px){
+        grid-template-columns: repeat(1,1fr);
+        div{
+            padding: 20px 10px;
+        }
+    }
+}

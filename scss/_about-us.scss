@@ -1,0 +1,271 @@
+.about-us{
+    width: 100%;
+    position: relative;
+    margin-top: 100vh;
+    background-image: url("/Assets/svg/bot-svg.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    h1{
+        position: relative;
+        top: 20%;
+        left: 20%;
+        font-size: 2.1rem;
+        font-family: "Pacifico", serif;
+    }
+    p{
+        position: relative;
+        top: 45%;
+        right: 22%;
+        width: 40%;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+    @include res(1024px){
+        h1{
+            font-size: 1.5rem;
+        }
+        p{
+            top: 43%;
+            font-size: 1.1rem;
+        }
+    }
+    @include res(768px){
+        background-image: none;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 0vh;
+        gap: 20px;
+        height: 40vh;
+        width: auto;
+        padding: 10px 30px;
+        h1{
+            top: 0%;
+            left: 0%;
+            font-size: 2.5rem;
+            width: 100%;
+        }
+        p{
+            font-size: 1.5rem;
+            width: 100%;
+            top: 0%;
+            right: 0%;
+        }
+    }
+    @include res(425px){
+        height: 20vh;
+        padding: 10px 20px;
+        h1{
+            font-size: 1.3rem;
+        }
+        p{
+            font-size: 1.1rem;
+            width: 100%;
+            
+        }
+    }
+}
+.team-detail{
+    display: flex;
+    margin: 20px;
+    border-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    border: 5px solid black;
+    transition: .3s ease;
+    img{
+        padding: 30px;
+        border-radius: 10px;
+    }
+    .right{
+        width: 80%;
+        padding: 20px;
+    }
+    &:hover{
+        background-color: black;
+        color: white;
+
+    }
+    @include res(900px){
+        flex-direction: column;
+        .right{
+            
+            h1{
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+.contact-box{
+    width: 95%;
+    margin: 20px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 1px col(blacks);
+    transition: .3s ease;
+    border: 2px solid col(blacks);
+    h1{
+        @include font(2rem,800);
+        text-align: center;
+        color: col(whites);
+    }
+    .sl{
+        backdrop-filter: blur(10px);
+        display: grid;
+        background-color: rgba(0, 0, 0, 0.329);
+        grid-template-columns: repeat(2,1fr);
+        border-radius: 10px;
+        overflow: hidden;
+        gap: 10px;
+        border: 3px solid col(whites);
+        .left{
+            padding: 30px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            h2{
+                text-align: center;
+                @include font(1.6rem,600);
+                color: col(whites);
+                cursor: default;
+                
+            }
+            label{
+                margin-top: 20px;
+                @include font(1.1rem,600);
+                color: col(whites);
+            }
+            input{
+                @include font(1.1rem,600);
+                color: col(blacks);
+                background-color: col(whites);
+                padding:5px 20px;
+                border-radius: 5px;
+                border: 3px solid col(main2);
+                outline: none;
+                margin-top: 2px;
+                &::placeholder{
+                    color: col(blacks);
+                }
+            }
+        }
+        .right{
+            padding: 30px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            label{
+                margin-top: 20px;
+                @include font(1.1rem,600);
+                color: col(whites);
+            }
+            textarea{
+                @include font(1.1rem,600);
+                color: col(blacks);
+                background-color: col(whites);
+                padding:5px 20px;
+                border-radius: 5px;
+                border: 3px solid col(main2);
+                outline: none;
+                margin-top: 2px;
+                height: 100%;
+                &::placeholder{
+                    color: col(blacks);
+                }
+                &::-webkit-scrollbar{
+                    width: 0px;
+                }
+            }
+        }
+    }
+    button{
+        margin-top: 10px;
+        width: 100%;
+        padding: 10px;
+        @include font(1.1rem,600);
+        border: none;
+        background-color: col(main2);
+        color: col(whites);
+        border-radius: 10px;
+        transition: .3s ease;
+        cursor: pointer;
+        &:hover{
+            background-color: col(main);
+            color: col(blacks);
+        }
+    }
+    @include res(850px){
+        .sl{
+            grid-template-columns: repeat(1,1fr);
+            gap: 0px;
+            padding: 10px 0px;
+            .left{
+                padding: 0px 30px;
+            }
+            .right{
+                padding: 10px 30px;
+                textarea{
+                    height: 200px;
+                }
+            }
+        }
+    }
+    @include res(600px){
+        padding: 20px;
+        h1{
+            @include font(1.5rem,800);
+        }
+        .sl{
+            .left{
+                padding: 0px 20px;
+                h2{
+                    @include font(1.5rem,500);
+                }
+                label{
+                    @include font(1rem,500);
+                }
+                input{
+                    @include font(1rem,500);
+                }
+            }
+            .right{
+                padding: 10px 20px;
+            }
+        }
+    }
+    @include res(375px){
+        padding: 0px;
+        h1{
+            @include font(1.5rem,800);
+        }
+        .sl{
+            border: none;
+            border-radius: 0px;
+            .left{
+                padding: 0px 10px;
+                h2{
+                    @include font(1.5rem,500);
+                }
+                label{
+                    @include font(1rem,500);
+                }
+                input{
+                    @include font(1rem,500);
+                }
+            }
+            .right{
+                padding: 10px 20px;
+                padding: 0px 10px;
+            }
+        }
+    }
+}

@@ -1,0 +1,74 @@
+.what-we-do{
+    padding: 10px 20px;
+    h1{
+        text-align: center;
+        color: white;
+        font-family: "Pacifico", serif;
+    }
+    .grid-wwd{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 20px;
+        .item{
+            display: flex;
+            align-items: center;
+            border: 2px solid black;
+            background-color: rgba(255, 255, 255, 0.521);
+            backdrop-filter: blur(20px);
+            padding: 10px;
+            border-radius: 10px;
+            transition: .2s ease;
+            gap: 20px;
+            &:hover{
+                background-color: white;
+            }
+            .right{
+                h1{
+                    font-family: Arial, Helvetica, sans-serif;    
+                    color: black;
+                }
+                p{
+                    margin-top: 10px;
+                    font-family: Arial, Helvetica, sans-serif;
+                    color: black;
+                    font-size: 1.1rem;
+                }
+            }
+        }
+    }
+    @include res(885px){
+        .grid-wwd{
+            .item{
+                .right{
+                    h1{
+                        font-size: 1.2rem;
+                    }
+                    p{
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+    @include res(768px){
+        .grid-wwd{
+            grid-template-columns: repeat(1,1fr);
+            .item{
+                .right{
+                    h1{
+                        font-size: 1.2rem;
+                    }
+                    p{
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+    @include res(425px){
+        .item{
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+}
