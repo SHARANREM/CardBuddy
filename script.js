@@ -22,7 +22,7 @@ let menuList = document.getElementById("menuList")
                 return;
             }
         
-            emailjs.send("service_zstr0l8", "template_c612iys", contact)
+            emailjs.send("service_22xi7tu", "template_mmr35pe", contact)
                 .then(() => {
                     alert("Message received! Thanks for contacting us 👍");
                 })
