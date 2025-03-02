@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CardBuddy</title>
+    <link rel="shortcut icon" href="/Assets/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+        <div class="card-top">
+            <img src="/Assets/img/logo.png" alt="Logo">
+            <h1>Create A Card</h1>
+        </div>
+        <div class="chatbot">
+            <a href="https://cardbuddyai.streamlit.app/" target="_blank"><img src="/Assets/icons/robot.png" alt="Chatbot"></a>
+        </div>
+        <div class="form">
+            <div class="top-left-form">
+                <label for="qf">Enter Question: </label>
+                <textarea name="qf" id="qf" placeholder="Enter Question for flash card"></textarea>
+            </div>
+
+            <div class="right-form">
+                <label for="af">Enter Answer: </label>
+                <textarea name="af" id="af" placeholder="Enter Answer for Question"></textarea>
+                <button>Create Card</button>
+            </div>
+
+            <div class="bot-left-form">
+                <label for="kf">Enter Keywords: </label>
+                <textarea name="kf" id="kf" placeholder="Enter Keywords"></textarea>
+            </div>
+
+            
+        </div>
+        <script>
+            let userCreds = JSON.parse(sessionStorage.getItem("user-creds"));
+            let userInfo = JSON.parse(sessionStorage.getItem("user-insfo"))
+    
+            let Signout = () => {
+                sessionStorage.removeItem("user-creds");
+                sessionStorage.removeItem("user-insfo");
+                window.location.href = "/index.html";
+            }
+    
+            let checkedCred = () => {
+                if (!sessionStorage.getItem("user-creds")) {
+                    window.location.href = "/index.html";
+                }
+            }
+    
+            window.addEventListener('load', checkedCred);
+    
+        </script>
+        <script type="module" src="card.js"></script>
+</body>
+</html>
